@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>assn06</title>
+  <style>
+    table, th, td{
+      border:solid;
+    }
+  </style>
+</head>
+<body>
+  <table id="table">
+    <tr>
+      <th>x0</th>
+      <th>x1</th>
+      <th>x2</th>
+    </tr>
+    <tr>
+      <td>x3</td>
+      <td>x4</td>
+      <td>x5</td>
+    </tr>
+  </table>
+  <button id="insert-row">insert row</button>
+  <script>
+    const table = document.getElementById("table");
+    const insertBtn = document.getElementById("insert-row");
+    let i = 0;
+    insertBtn.addEventListener("click", () => {
+      const row = table.appendChild(document.createElement("tr"));
+      for (let j = i; i < j + 3; ++i) {
+        row.appendChild(document.createElement("td")).innerText = `y${i}`;
+      }
+    })
+  </script>
+</body>
+</html>

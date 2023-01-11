@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>assn01</title>
+</head>
+
+<body>
+  <div class="parentElement"></div>
+  <script>
+    let products = [
+      {
+        id: "1",
+        item: "Shirt",
+      },
+      {
+        id: "2",
+        item: "Jeans",
+      },
+      {
+        id: "3",
+        item: "T-shirt",
+      },
+      {
+        id: "4",
+        item: "Denim Jacket",
+      },
+      {
+        id: "5",
+        item: "Casual Shoes",
+      },
+    ];
+
+    const parent = document.querySelector(".parentElement");
+    for (let item of products) {
+      const newElement = parent.appendChild(document.createElement("button"));
+      newElement.classList.add("myButton");
+      newElement.innerText = "remove ";
+      newElement.addEventListener("mousedown", (event) => {
+        parent.removeChild(newElement);
+      });
+
+      const myspan = newElement.appendChild(document.createElement("span"));
+      myspan.innerText = item.item;
+      myspan.setAttribute("style", "color:blue;")
+    }
+  </script>
+</body>
+
+</html>

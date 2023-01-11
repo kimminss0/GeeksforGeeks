@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>assn11</title>
+  <style>
+    .star {
+      font-size: 20pt;
+    }
+
+    .filled {
+      color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="rating">
+  </div>
+  <script>
+    const rating = document.getElementById("rating");
+    for (let i = 0; i < 5; ++i) {
+      const star = rating.appendChild(document.createElement("span"));
+      star.innerHTML = "&#9734;"
+      star.classList.add("star");
+      star.setAttribute("id", "star-".concat(i + 1));
+      // star.setAttribute("value", i+1);
+    }
+    rating.addEventListener("click", (event) => {
+      const rating = event.target.id.split("-")[1];
+      for (let i = 0; i < 5; ++i) {
+        const star = document.getElementById("star-".concat(i + 1));
+        if (i < rating) {
+          star.classList.add("filled");
+          star.innerHTML = "&#9733;";
+        } else {
+          star.classList.remove("filled");
+          star.innerHTML = "&#9734;";
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

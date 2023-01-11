@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>assn03</title>
+</head>
+
+<body>
+  <div id="fav">
+    <select id="item-list">
+    </select>
+    <button type="submit" id="submit-button">add to fav</button>
+    <ul id="fav-list"></ul>
+  </form>
+
+  <script>
+    let items = ["asdf", "uiop", "jkll", "qwer"];
+    const itemList = document.getElementById("item-list");
+    const subBttn = document.getElementById("submit-button");
+    const favList = document.getElementById("fav-list");
+    for (let item of items) {
+      const op = itemList.appendChild(document.createElement("option"));
+      op.innerText = item;
+      op.setAttribute("value", item);
+    }
+    let favArr = [];
+    subBttn.addEventListener("click", (event) => {
+      const name = itemList.value;
+      if (!(favArr.some((item) => (item === name)))) {
+        favArr.push(name);
+        favList.appendChild(document.createElement("li")).innerText = name;
+      }
+    });
+  </script>
+</body>
+
+</html>

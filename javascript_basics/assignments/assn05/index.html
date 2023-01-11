@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>assn05</title>
+  <style>
+    .highlight{
+      background-color: yellowgreen;
+    }
+  </style>
+</head>
+<body>
+  <p id="text"></p>
+  <script>
+    const str = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum repellendus magni eos? Labore harum nemo eum, magni quas animi iste consectetur debitis excepturi dignissimos aperiam maiores nihil, itaque odio perferendis?";
+    const text = document.getElementById("text");
+    const arr = str.split(" ");
+    for (let word of arr) {
+      const span = text.appendChild(document.createElement("span"));
+      span.innerText=word;
+      if (word.length > 5) {
+        span.classList.add("highlight");
+      }
+      text.appendChild(document.createElement("span")).innerText = " ";
+    }
+  </script>
+</body>
+</html>

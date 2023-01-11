@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>assn02</title>
+</head>
+
+<body>
+  <input id="input" placeholder="type here..." />
+  <p id="input-value"></p>
+  <button id="button">Mirror</button>
+  <p id="mirror-value"></p>
+  <script>
+    const input = document.getElementById("input");
+    const button = document.getElementById("button");
+    const inputValue = document.getElementById("input-value");
+    const mirroredValue = document.getElementById("mirror-value");
+    input.addEventListener("input", (event) => {
+      inputValue.innerText = input.value;
+    });
+    button.addEventListener("click", () => {
+      mirroredValue.innerText = inputValue.innerText?.split("").reverse().join("") || "";
+    });
+  </script>
+</body>
+
+</html>
